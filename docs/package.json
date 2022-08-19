@@ -1,0 +1,24 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "Cosmos IBC Account Documentation",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev",
+    "preserve": "./pre.sh",
+    "serve": "trap 'exit 0' SIGINT; vuepress dev --no-cache",
+    "postserve": "./post.sh",
+    "prebuild": "./pre.sh",
+    "build": "trap 'exit 0' SIGINT; vuepress build --no-cache",
+    "postbuild": "./post.sh",
+    "deploy": "yarn prebuild && yarn build && yarn gh-pages --dist '.vuepress/dist'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^3.1.0",
+    "markdown-it": "^12.0.4",
+    "vuepress": "^1.8.2",
+    "vuepress-theme-cosmos": "^1.0.179"
+  }
+}
